@@ -1,0 +1,92 @@
+def pascal_triangle(n):
+    for i in range(n):
+        ans = 1  # Initialize first value as 1
+        print(ans, end=" ")  # Print first value
+
+        for col in range(1, i + 1):
+            ans = ans * (i - col + 1) // col  # Compute next value
+            print(ans, end=" ")  # Print each value in the row
+
+        print()  # New line after each row
+
+# Example: Generate Pascal's Triangle with 6 rows
+pascal_triangle(6)
+x = 10  # Global variable
+
+def tricky():
+    x = x + 5  # Trying to modify global x without declaring it
+    print(x)
+
+tricky()  # What happens?
+import random
+
+num = random.randint(1, 110)  # Random integer between 1 and 10
+print(num)  # Output: (random number between 1 and 10)
+
+num = random.randrange(1, 10, 2)  # Random number from {1, 3, 5, 7, 9}
+print(num)  
+num = random.random()
+print(num)  # Output: 0.234567 (random float)
+
+num = random.uniform(11,900)  # Random float between 5 and 10
+print(num) 
+
+items = ['apple', 'banana', 'cherry']
+fruit = random.choice(items)
+print(fruit)  # Output: (random fruit from the list)
+
+
+numbers = [1, 2, 3, 4, 5]
+rand_numbers = random.choices(numbers, k=3)  
+print(rand_numbers)  # Output: [2, 4, 1] (random selection)
+
+
+numbers = [1, 2, 3, 4, 5]
+rand_numbers = random.sample(numbers, 3)  
+print(rand_numbers)  # Output: [3, 1, 5] (random and unique)
+
+
+
+import random
+
+def get_computer_choice():
+    return random.choice(["rock", "paper", "scissors"])
+
+def get_winner(player, computer):
+    if player == computer:
+        return "It's a tie!"
+    elif (player == "rock" and computer == "scissors") or \
+         (player == "paper" and computer == "rock") or \
+         (player == "scissors" and computer == "paper"):
+        return "You win!"
+    else:
+        return "Computer wins!"
+
+def play_game():
+    print("\n--- Rock Paper Scissors Game ---")
+    
+    while True:
+        player_choice = input("Enter rock, paper, or scissors (or 'quit' to stop): ").lower()
+        
+        if player_choice == "quit":
+            print("Thanks for playing!")
+            break
+
+        if player_choice not in ["rock", "paper", "scissors"]:
+            print("Invalid choice, try again.")
+            continue
+
+        computer_choice = get_computer_choice()
+        print(f"Computer chose: {computer_choice}")
+
+        result = get_winner(player_choice, computer_choice)
+        print(result)
+        print("-" * 30)
+
+# Run the game
+play_game()
+
+
+
+
+
